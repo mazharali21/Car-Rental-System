@@ -1,0 +1,75 @@
+.promo-wrapper {
+    max-width: 1280px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 70px 40px;
+  gap: 40px;
+  margin: auto;
+}
+
+.promo-left {
+  max-width: 500px;
+}
+
+.promo-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 18px;
+  color: #222;
+}
+
+.promo-text {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.45;
+  margin-bottom: 30px;
+}
+
+.promo-btn {
+  background: #FF7129;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.promo-btn:hover {
+  background: #e85f16;
+}
+
+.promo-right img {
+  width: 480px;
+}
+
+.fade-in {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .promo-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+  .promo-right img {
+    width: 340px;
+  }
+  .promo-title {
+    font-size: 30px;
+  }
+}

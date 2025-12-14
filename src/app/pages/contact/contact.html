@@ -1,0 +1,45 @@
+<section class="contact-page">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p>Have a question or need help? Feel free to reach out.</p>
+
+    <form (ngSubmit)="submitForm()" #contactForm="ngForm">
+      
+      <div class="form-group">
+        <label>Name <span>*</span></label>
+        <input
+          type="text"
+          name="name"
+          [(ngModel)]="formData.name"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Email <span>*</span></label>
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="formData.email"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Message <span>*</span></label>
+        <textarea
+          name="message"
+          rows="5"
+          [(ngModel)]="formData.message"
+          required
+        ></textarea>
+      </div>
+
+      <button type="submit" [disabled]="!contactForm.valid">
+        Send Message
+        <i class="bi bi-send-fill"></i>
+      </button>
+
+    </form>
+  </div>
+</section>

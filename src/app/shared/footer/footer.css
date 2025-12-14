@@ -1,0 +1,144 @@
+.footer-wrapper {
+  padding: 50px 40px;
+  background: #fff;
+  color: #333;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.logo-icon {
+  width: 42px;
+  height: 42px;
+  background: #FF7129;
+  color: #fff;
+  font-weight: 700;
+  font-size: 22px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text .brand {
+  font-size: 22px;
+  font-weight: 700;
+  color: #FF7129;
+}
+
+.logo-text small {
+  display: block;
+  font-size: 11px;
+  color: #777;
+}
+
+.socials {
+  font-size: 13px;
+  color: #777;
+}
+
+hr {
+  margin: 30px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.footer-middle {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.info-col h4,
+.subscribe-col h4 {
+  font-size: 15px;
+  margin-bottom: 6px;
+  color: #666;
+}
+
+.highlight {
+  color: #FF7129;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.subscribe-col input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 14px;
+}
+
+.subscribe-col button {
+  width: 100%;
+  padding: 12px;
+  background: #FF7129;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.subscribe-col button:hover {
+  background: #e65d1e;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.links a {
+  font-size: 14px;
+  color: #666;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.links a:hover {
+  color: #FF7129;
+}
+
+.copy {
+  font-size: 13px;
+  color: #777;
+}
+
+@media (max-width: 900px) {
+  .footer-middle {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-wrapper {
+    padding: 40px 20px;
+  }
+}

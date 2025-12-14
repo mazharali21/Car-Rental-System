@@ -1,0 +1,30 @@
+<section id="faq" class="faq-wrapper">
+
+  <h2 class="section-title">FAQs</h2>
+  <p class="section-subtitle">
+    Frequently asked questions about our car rental service
+  </p>
+
+  <div class="faq-list">
+    <div
+      class="faq-item"
+      *ngFor="let faq of faqs; let i = index"
+      [ngClass]="{ 'active': faq.open }"
+      (click)="toggle(i)"
+    >
+
+      <div class="faq-question">
+        <span>{{ faq.question }}</span>
+        <span class="icon">
+          {{ faq.open ? '−' : '+' }}
+        </span>
+      </div>
+
+      <div class="faq-answer" *ngIf="faq.open">
+        {{ faq.answer }}
+      </div>
+
+    </div>
+  </div>
+
+</section>

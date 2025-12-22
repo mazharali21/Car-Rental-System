@@ -1,73 +1,46 @@
-
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
 
 interface Car {
+  id: number;
   name: string;
-  price: string;
+  pricePerDay: number;
   luggage: number;
   doors: number;
-  passenger: number;
-  image: string;
+  passengers: number;
+  imageUrl: string;
 }
 
 @Component({
   selector: 'app-car-showcase',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [CommonModule, RouterLink],
   templateUrl: './car-showcase.html',
   styleUrls: ['./car-showcase.css']
 })
+export class CarShowcase implements OnInit {
 
-export class CarShowcase {
-  cars: Car[] = [
-    {
-      name: "Mitsubishi Pajero",
-      price: "$389.00 / day",
-      luggage: 8,
-      doors: 4,
-      passenger: 4,
-      image: "asset/car.jpg"
-    },
-    {
-      name: "Nissan Moco",
-      price: "$389.00 / day",
-      luggage: 8,
-      doors: 4,
-      passenger: 4,
-      image: "asset/car.jpg"
-    },
-    {
-      name: "Honda Fitta",
-      price: "$389.00 / day",
-      luggage: 8,
-      doors: 4,
-      passenger: 4,
-      image: "asset/car.jpg"
-    },
-    {
-      name: "Skoda Laura",
-      price: "$389.00 / day",
-      luggage: 8,
-      doors: 4,
-      passenger: 4,
-      image: "asset/car.jpg"
-    },
-    {
-      name: "Mazda LaPuta",
-      price: "$389.00 / day",
-      luggage: 8,
-      doors: 4,
-      passenger: 4,
-      image: "asset/car.jpg"
-    },
-    {
-      name: "Buick LaCrosse",
-      price: "$389.00 / day",
-      luggage: 8,
-      doors: 4,
-      passenger: 4,
-      image: "asset/car.jpg"
-    }
-  ];
+  cars: Car[] = [];
+
+  private apiUrl = 'https://localhost:7152/api/Car';
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.fetchCars();
+  }
+
+  fetchCars(): void {
+    this.http.get<Car[]>(this.apiUrl).subscribe({
+      next: (data) => {
+        this.cars = data;
+        console.log('Cars loaded:', data);
+      },
+      error: (err) => {
+        console.error('API Error:', err);
+      }
+    });
+  }
 }
-

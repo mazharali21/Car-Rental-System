@@ -5,21 +5,21 @@
 
     <div class="car-grid">
       <div class="car-card" *ngFor="let car of cars">
-        <img [src]="car.image" alt="{{ car.name }}" />
+        <img [src]="car.imageUrl" alt="{{ car.name }}" />
 
         <div class="car-body">
           <h3 class="car-name">{{ car.name }}</h3>
-          <p class="car-price">{{ car.price }}</p>
+          <p class="car-price">{{ car.pricePerDay }} / day</p>
 
           <div class="car-details">
             <span>Luggage: {{ car.luggage }}</span>
             <span>Doors: {{ car.doors }}</span>
-            <span>Passenger: {{ car.passenger }}</span>
+            <span>Passenger: {{ car.passengers }}</span>
           </div>
 
           <p class="car-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 
-          <button class="rent-btn">Rent Now</button>
+          <button  [routerLink]="['/booking', car.name]" class="rent-btn">Rent Now</button>
         </div>
       </div>
     </div>

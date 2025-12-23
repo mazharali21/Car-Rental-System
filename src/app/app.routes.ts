@@ -7,7 +7,7 @@ import { Booking } from './pages/booking/booking';
 export const routes: Routes = [
     {path : "", component : Home },
     {path : "contact-us", component : Contact},
-    // {path : "booking/:carName", component : Booking},
+    {path : "booking/:carName", component : Booking},
     {path : "**", component : Pagenotfound}
 
 ];

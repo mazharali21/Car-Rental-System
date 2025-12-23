@@ -1,45 +1,47 @@
-<!-- <h2>Book Car</h2>
+<h2>Book {{ carName }}</h2>
 
-<form (ngSubmit)="submitBooking()">
+<form (ngSubmit)="submitBooking()" #f="ngForm">
 
   <input
     type="text"
     placeholder="Full Name"
-    [(ngModel)]="booking.customerName"
-    name="name"
+    name="fullName"
+    [(ngModel)]="bookingData.fullName"
     required
   />
 
   <input
     type="email"
     placeholder="Email"
-    [(ngModel)]="booking.email"
     name="email"
+    [(ngModel)]="bookingData.email"
     required
   />
 
   <input
     type="text"
     placeholder="Phone"
-    [(ngModel)]="booking.phone"
     name="phone"
+    [(ngModel)]="bookingData.phone"
     required
   />
 
   <input
     type="date"
-    [(ngModel)]="booking.startDate"
     name="startDate"
+    [(ngModel)]="bookingData.startDate"
     required
   />
 
   <input
     type="date"
-    [(ngModel)]="booking.endDate"
     name="endDate"
+    [(ngModel)]="bookingData.endDate"
     required
   />
 
   <button type="submit">Confirm Booking</button>
 
-</form> -->
+</form>
+
+<p class="message" *ngIf="message">{{ message }}</p>
